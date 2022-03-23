@@ -1,3 +1,74 @@
+$color-green: #0C8543;
+$color-light-grey: #E0E0E0;
+
+$mobile-max-width: 540px;
+
+@mixin mobile {
+    @media screen and (max-width: $mobile-max-width) {
+        @content;
+    }
+}
+
 body {
-    color: green;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    padding: 20px;
+    border-bottom: 1px solid #E0E0E0;
+
+    @include mobile() {
+        padding: 10px;
+    }
+}
+
+.logo {
+    display: flex;
+    margin: auto;
+    width: fit-content;
+    border-radius: 4px 4px;
+    border: 1px solid $color-green;
+
+    &__space, &__content {
+        height: 54px;
+
+        @include mobile() {
+            height: 48px;
+        }
+    }
+
+    &__space {
+        width: 52px;
+
+        @include mobile() {
+            width: 44px;
+        }
+    }
+
+    &__content {
+        position: relative;
+        width: 114px;
+        background-color: $color-green;
+
+        @include mobile() {
+            width: 104px;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+
+        @include mobile() {
+            bottom: 6px;
+            left: 6px;
+
+            & > svg {
+                width: 83px;
+                height: 17px;
+            }
+        }
+    }
 }
