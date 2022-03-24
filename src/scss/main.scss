@@ -1,6 +1,9 @@
 $color-green: #0C8543;
+$color-white: #ffffff;
 $color-green-light: #F3F9F6;
 $color-light-grey: #E0E0E0;
+
+$color-on-green: $color-white;
 
 $mobile-max-width: 576px;
 $tablet-max-width: 992px;
@@ -48,6 +51,30 @@ h1 {
         font-size: 22px;
         line-height: 26px;
         margin-bottom: 25px;
+    }
+}
+
+h3 {
+    font-size: 27px;
+    line-height: 36px;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 15px;
+
+    @include mobile() {
+        font-size: 20px;
+        line-height: 26px;
+    }
+}
+
+p {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 25px;
+
+    @include mobile() {
+        font-size: 16px;
+        line-height: 24px;
     }
 }
 
@@ -198,29 +225,9 @@ h1 {
         margin-bottom: 30px;
     }
 
-    &__title {
-        font-size: 27px;
-        line-height: 36px;
-        padding: 0;
-        margin-top: 0;
-        margin-bottom: 15px;
-
-        @include mobile() {
-            font-size: 20px;
-            line-height: 26px;
-        }
-    }
-
     &__descr {
-        font-size: 18px;
-        line-height: 26px;
         margin: 0;
 
-        @include mobile() {
-            font-size: 16px;
-            line-height: 24px;
-        }
-        
         @include tablet-sm() {
             margin-bottom: 20px;
         }
@@ -240,6 +247,32 @@ h1 {
             width: 200px;
             top: 10px;
             right: 25px;
+        }
+    }
+}
+
+.methods {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.methodsList {
+    &Item {
+        background-color: $color-green;
+        color: $color-on-green;
+        border-radius: 8px;
+
+        &__title {
+            padding: 15px;
+            margin: 0;
+            font-size: 21px;
+            line-height: 28px;
+        }
+
+        &__img {
+            width: 100%;
+            border-radius: 8px;
+            vertical-align: top;
         }
     }
 }
