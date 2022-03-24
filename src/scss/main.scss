@@ -79,6 +79,16 @@ p {
     }
 }
 
+ul {
+    list-style: none;
+}
+
+a {
+    color: $color-on-green;
+    font-size: 14px;
+    line-height: 17px;
+}
+
 .text {
     &GreenHiglight {
         color: $color-green;
@@ -114,11 +124,19 @@ p {
 }
 
 .logo {
+    $this: &;
     display: flex;
-    margin: auto;
     width: fit-content;
     border-radius: 4px 4px;
     border: 1px solid $color-green;
+
+    &_light {
+        border: 2px solid $color-on-green;
+
+        #{$this}__space {
+            background-color: $color-on-green;
+        }
+    }
 
     &__space, &__content {
         height: 54px;
@@ -155,7 +173,7 @@ p {
             bottom: 6px;
             left: 6px;
 
-            & > svg {
+            & > img {
                 width: 83px;
                 height: 17px;
             }
@@ -300,4 +318,67 @@ p {
     &__text {
         margin-bottom: 0;
     }
+}
+
+.remark {
+    padding: 60px;
+    text-align: center;
+
+    @include mobile() {
+        padding: 35px 15px;
+    }
+
+    &__text {
+        margin: 0;
+    }
+}
+
+footer {
+    padding: 25px 0;
+    background-color: $color-green;
+    color: $color-on-green;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet() {
+        display: block;
+        text-align: center;
+    }
+}
+
+.navList {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0 15px;
+    
+    @include tablet() {
+        display: block;
+        margin: 25px 0;
+        padding: 0;
+    }
+
+    &__item {
+        margin-right: 30px;
+
+        @include tablet() {
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+        
+        &:last-child {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.footerCopyright {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
 }
