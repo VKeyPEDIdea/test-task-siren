@@ -1,8 +1,10 @@
 $color-green: #0C8543;
+$color-green-light: #F3F9F6;
 $color-light-grey: #E0E0E0;
 
 $mobile-max-width: 540px;
-$tablet-max-width: 868px;
+$tablet-max-width: 992px;
+$tablet-sm-max-width: 768px;
 
 $font-main: 'Montserrat', sans-serif;
 
@@ -14,6 +16,12 @@ $font-main: 'Montserrat', sans-serif;
 
 @mixin tablet {
     @media screen and (max-width: $tablet-max-width) {
+        @content;
+    }
+}
+
+@mixin tablet-sm {
+    @media screen and (max-width: $tablet-sm-max-width) {
         @content;
     }
 }
@@ -31,15 +39,15 @@ h1 {
     margin-top: 0;
     margin-bottom: 50px;
 
+    @include tablet() {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
     @include mobile() {
         font-size: 22px;
         line-height: 26px;
         margin-bottom: 25px;
-    }
-
-    @include tablet() {
-        font-size: 32px;
-        line-height: 40px;
     }
 }
 
@@ -119,6 +127,49 @@ h1 {
                 width: 83px;
                 height: 17px;
             }
+        }
+    }
+}
+
+.feature-list {
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include tablet-sm() {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+}
+
+.feature {
+    padding: 30px 18px;
+    background-color: $color-green-light;
+    text-align: center;
+    border-radius: 8px;
+
+    @include mobile() {
+        padding: 20px 16px;
+    }
+
+    &__icon {
+        margin-bottom: 15px;
+
+        @include mobile() {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    &__title {
+        padding: 0;
+        margin: 0;
+        font-size: 21px;
+        line-height: 28px;
+
+        @include tablet() {
+            font-size: 16px;
+            line-height: 20px;
         }
     }
 }
