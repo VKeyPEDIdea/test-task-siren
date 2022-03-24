@@ -2,7 +2,7 @@ $color-green: #0C8543;
 $color-green-light: #F3F9F6;
 $color-light-grey: #E0E0E0;
 
-$mobile-max-width: 540px;
+$mobile-max-width: 576px;
 $tablet-max-width: 992px;
 $tablet-sm-max-width: 768px;
 
@@ -52,22 +52,26 @@ h1 {
 }
 
 .text {
-    &-green-higlight {
+    &GreenHiglight {
         color: $color-green;
     }
 
-    &-shadowed {
+    &Shadowed {
         background-color: transparent;
         text-shadow: 0px 4px 4px rgba(0,0,0,0.1);
     }
 
-    &-size-50 {
+    &Size50 {
         font-size: 50px;
 
         @include tablet() {
             font-size: inherit;
         }
     }
+}
+
+.bgGreenLight {
+    background-color: $color-green-light;
 }
 
 .header {
@@ -131,20 +135,21 @@ h1 {
     }
 }
 
-.feature-list {
+.featureList {
     display: grid;
     column-gap: 20px;
     grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 60px;
 
     @include tablet-sm() {
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
+        margin-bottom: 35px;
     }
 }
 
 .feature {
     padding: 30px 18px;
-    background-color: $color-green-light;
     text-align: center;
     border-radius: 8px;
 
@@ -170,6 +175,71 @@ h1 {
         @include tablet() {
             font-size: 16px;
             line-height: 20px;
+        }
+    }
+}
+
+.details {
+    padding: 60px 0;
+
+    @include mobile() {
+        padding: 35px 0;
+    }
+}
+
+.detailsItem {
+    margin-bottom: 40px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include mobile() {
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        font-size: 27px;
+        line-height: 36px;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 15px;
+
+        @include mobile() {
+            font-size: 20px;
+            line-height: 26px;
+        }
+    }
+
+    &__descr {
+        font-size: 18px;
+        line-height: 26px;
+        margin: 0;
+
+        @include mobile() {
+            font-size: 16px;
+            line-height: 24px;
+        }
+        
+        @include tablet-sm() {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        position: relative;
+    }
+
+    &__icon {
+        position: absolute;
+        top: -20px;
+        right: -5px;
+
+        @include mobile() {
+            width: 200px;
+            top: 10px;
+            right: 25px;
         }
     }
 }
