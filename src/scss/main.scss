@@ -2,6 +2,7 @@ $color-green: #0C8543;
 $color-white: #ffffff;
 $color-green-light: #F3F9F6;
 $color-light-grey: #E0E0E0;
+$color-grey: #F6F6F6;
 
 $color-on-green: $color-white;
 
@@ -274,5 +275,29 @@ p {
             border-radius: 8px;
             vertical-align: top;
         }
+    }
+}
+
+.warranty {
+    background-color: $color-grey;
+
+    @include tablet-sm() {
+        text-align: center;
+        padding: 35px 0;
+    }
+
+    &__img {
+        width: 100%;
+        max-width: 256px;
+        margin: -12px 0;
+
+        @include tablet-sm() {
+            max-width: 170px;
+            margin: 0 0 20px 0;
+        }
+    }
+
+    &__text {
+        margin-bottom: 0;
     }
 }
