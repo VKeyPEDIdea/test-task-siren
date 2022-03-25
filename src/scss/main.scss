@@ -181,6 +181,11 @@ a {
     }
 }
 
+.logoWrapper {
+    display: flex;
+    justify-content: center;
+}
+
 .featureList {
     display: grid;
     column-gap: 20px;
