@@ -123,6 +123,15 @@ a {
     }
 }
 
+.m-col {
+    margin: 0 -30px;
+    padding: 0;
+    
+    @include tablet() {
+        margin: 0 -4px 8px;
+    }
+}
+
 .logo {
     $this: &;
     display: flex;
@@ -187,15 +196,16 @@ a {
 }
 
 .featureList {
-    display: grid;
-    column-gap: 20px;
-    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    padding: 0 45px;
     margin-bottom: 60px;
 
     @include tablet-sm() {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
         margin-bottom: 35px;
+    }
+
+    @include tablet() {
+        padding: 0 20px;
     }
 }
 
@@ -203,6 +213,7 @@ a {
     padding: 30px 18px;
     text-align: center;
     border-radius: 8px;
+    align-self: stretch;
 
     @include mobile() {
         padding: 20px 16px;
